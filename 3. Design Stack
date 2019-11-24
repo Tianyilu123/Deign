@@ -1,0 +1,27 @@
+// 07/16/ 2019
+// 1. Design a stack using Array with certain capacity
+
+public class Mystack<T> {
+    private T[] array;
+    private int head;
+    
+    public Mystack(int c) {
+        array = new T[c];
+        head = 0;
+    }
+    
+    public boolean offer(T val) {
+        if(head >= array.length) return false;
+        array[head++] = val;
+        return true;
+    }
+    
+    public T peek() {
+        return (head == 0) ? null : array[head-1];
+    }
+    
+    public T poll() {
+        if(head == 0) return null;
+        return array[--head]; 
+    }
+}
