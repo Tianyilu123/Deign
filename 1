@@ -1,0 +1,32 @@
+// design stack using LinkedList
+
+public class MyStack<T> {
+    private ListNode<T> head;
+    public MyStack() {
+        head = null;
+    }
+    
+    public void push(T item) {
+        ListNode <T> newNode = new ListNode<T>(item);
+        newNode.next = head;
+        head = newNode;
+    }
+    
+    public T pop() {
+        if(head == null) return null;
+        ListNode<T> popNode = head;
+        head = head.next;
+        popNode.next = null;
+        return popNode.item;
+    }
+    
+    public T peek() {
+        return head == null ? null : head.item;
+    }
+    
+    class T {
+        public void T (int item) {
+            this.item = item;
+        }
+    }
+}
